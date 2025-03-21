@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Passions+Conflict&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -41,6 +42,26 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  /* New Colors */
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  /* Your Own Pallete */
+  --color-avocado-100: oklch(0.99 0 0);
+  --color-avocado-200: oklch(0.98 0.04 113.22);
+  --color-avocado-300: oklch(0.94 0.11 115.03);
+  --color-avocado-400: oklch(0.92 0.19 114.08);
+  --color-avocado-500: oklch(0.84 0.18 117.33);
+  --color-avocado-600: oklch(0.53 0.12 118.34);
+  --color-pallete-blue: #5956e9;
+  --color-pallete-cream: ##FFEFE0;
+  --color-pallete-pink: #FAB8C5;
+  --color-pallete-background: #f6f8fa;
+  /* New Font */
+  --font-inter: "Inter", sans-serif;
+  --font-nunito: "Nunito", sans-serif;
+  --font-passions-conflict: "Passions Conflict", cursive;
+  --font-roboto: "Roboto", sans-serif;
+  --font-rubik: "Rubik", sans-serif;
 }
 
 :root {
@@ -118,5 +139,26 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  h1 {
+    @apply text-4xl md:text-6xl lg:text-8xl;
+  }
+  h2 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  h3 {
+    @apply text-4xl md:text-5xl;
+  }
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+  h6 {
+    @apply text-base md:text-lg;
+  }
+  p {
+    @apply text-base;
   }
 }
