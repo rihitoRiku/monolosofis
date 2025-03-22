@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import React from "react";
 import {
@@ -23,11 +24,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { FaShoppingBag } from "react-icons/fa";
 import { HiMenuAlt3 } from "react-icons/hi";
+import { showDevelopmentToast } from "@/components/ToastNotification";
 
 export default function TopNavigation() {
   return (
     <>
-      <div className="bg-pallete-blue/40 fixed top-0 z-50 w-full backdrop-blur-md">
+      <div className="bg-pallete-blue/40 fixed top-0 z-50 w-full backdrop-blur-md select-none">
         <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-2 py-4 text-white md:px-4 md:py-6">
           <Link href="/">
             <div className="flex items-center gap-4">
@@ -48,17 +50,17 @@ export default function TopNavigation() {
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList className="ms-32 space-x-12">
               <NavigationMenuItem>
-                <Link href="" legacyBehavior passHref>
+                <Link href="" passHref>
+                  <h6>Collection</h6>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="" passHref>
                   <h6>Content</h6>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="" passHref>
-                  <h6>Reviews</h6>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="" legacyBehavior passHref>
                   <h6>Contact Us</h6>
                 </Link>
               </NavigationMenuItem>
@@ -66,7 +68,10 @@ export default function TopNavigation() {
           </NavigationMenu>
 
           <div className="flex items-center gap-2 md:gap-3">
-            <Button className="text-pallete-blue cursor-pointer rounded-lg bg-white px-6 py-5 text-base font-semibold shadow-2xl hover:bg-neutral-100 md:w-[9rem] md:rounded-2xl md:px-8 md:py-6">
+            <Button
+              onClick={showDevelopmentToast}
+              className="text-pallete-blue cursor-pointer rounded-lg bg-white px-6 py-5 text-base font-semibold shadow-2xl hover:bg-neutral-100 md:w-[9rem] md:rounded-2xl md:px-8 md:py-6"
+            >
               <FaShoppingBag className="size-5 md:size-6" /> Buy Book
             </Button>
             {/* Mobile Navigation - Hidden on desktop */}
@@ -89,10 +94,10 @@ export default function TopNavigation() {
                 </SheetHeader>
                 <nav className="mt-8 flex flex-col gap-4">
                   <Link href="" className="text-lg font-medium hover:underline">
-                    <h6>Content</h6>
+                    <h6>Collection</h6>
                   </Link>
                   <Link href="" className="text-lg font-medium hover:underline">
-                    <h6>Reviews</h6>
+                    <h6>Content</h6>
                   </Link>
                   <Link href="" className="text-lg font-medium hover:underline">
                     <h6>Contact Us</h6>
