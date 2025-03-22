@@ -4,6 +4,7 @@ import { ModeToggle } from "@/components/darkmode-toggle";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import TopNavigation from "@/components/top-navigation";
+import { Toaster } from "@/components/ui/sonner";
 import Footer from "@/components/footer";
 
 const inter = Inter({
@@ -34,6 +35,7 @@ export default function RootLayout({
           <TopNavigation />
           {children}
           <Footer />
+          <Toaster />
           {/* <div className="absolute top-0 end-0 pe-4 pt-4">
           <ModeToggle />
         </div> */}
