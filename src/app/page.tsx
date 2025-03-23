@@ -99,7 +99,7 @@ export default function Page() {
                     onClick={showDevelopmentToast}
                     className="cursor-pointer rounded-lg bg-white px-6 py-5 text-base text-neutral-900 shadow-none hover:bg-neutral-100 md:rounded-2xl md:px-8 md:py-8"
                   >
-                    <h5>Learn More</h5>
+                    <h5>Explore Now!</h5>
                   </Button>
                   <Button
                     onClick={showDevelopmentToast}
@@ -131,10 +131,7 @@ export default function Page() {
             <div className="mt-24 mb-28 flex flex-col items-start justify-center gap-6 md:mt-34 md:flex-row md:gap-20">
               <h2 className="flex-1/2 font-medium">About Monolosofis</h2>
               <h6 className="flex-1/2">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Maiores ex temporibus dolorum similique tempora pariatur,
-                ratione dignissimos corporis saepe eaque possimus voluptates,
-                ipsa, eligendi enim?
+                Stands as one of our finest philosophy books, addressing humanity's greatest existential questions. Dive into explorations of God's existence, the fabric of reality, the enigma of consciousness, and the search for purpose and meaning in life. 
               </h6>
             </div>
             <div className="bg-white flex flex-col items-center justify-between rounded-2xl p-4 md:flex-row md:p-[2rem]">
@@ -173,16 +170,16 @@ export default function Page() {
         </div>
         {/*  */}
         <div
-          className="mx-auto mt-36 max-w-screen-xl px-0 sm:px-4"
+          className="mx-auto mt-20 pt-20 max-w-screen-xl px-0 sm:px-4"
           data-aos="fade-up"
           data-aos-delay="100"
+          id="collection"
         >
           <div className="mx-auto flex max-w-[60rem] flex-col justify-between gap-12 px-4 py-20 md:flex-row">
             <div className="flex flex-col items-start">
-              <h3 className="mb-6 font-medium">New Arrivals</h3>
+              <h3 className="mb-6 font-medium">Explore The Series</h3>
               <h6>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio, nisi!
+                Journey through our handpicked collection, where every book opens a door to new ideas, adventures, and perspectives. What will you discover next?
               </h6>
             </div>
             <div className="flex items-center justify-center gap-6">
@@ -266,17 +263,16 @@ export default function Page() {
               data-aos-delay="100"
               className="flex-2/5"
             >
-              <h5 className="mb-6">Some Topics</h5>
-              <h3 className="mb-12 font-medium">What's Inside The Book?</h3>
+              <h5 className="mb-6">Know more</h5>
+              <h3 className="mb-12 font-medium">About The Writer</h3>
               <h6 className="mb-32">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Recusandae, dicta.
+                Stories don’t write themselves. Meet the author behind the words and discover what drives their craft.
               </h6>
               <Button
                 variant={"link"}
                 className="cursor-pointer text-xl font-light text-pallete-secondary"
               >
-                Contents <FaAngleRight className="mt-0.5 size-5" />
+                Get to Know <FaAngleRight className="mt-0.5 size-5" />
               </Button>
             </div>
             <div
@@ -299,7 +295,7 @@ export default function Page() {
         <div
           data-aos="fade-down"
           data-aos-delay="200"
-          className="mx-auto mb-56 flex max-w-screen-xl items-center px-4"
+          className="mx-auto mb-56 flex max-w-screen-xl items-center px-4" id="contact"
         >
           <div className="bg-pallete-main relative flex h-[48rem] w-full justify-center gap-8 rounded-[6rem] py-20">
             <div className="flex flex-col items-center gap-24 px-4">

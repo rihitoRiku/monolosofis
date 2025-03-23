@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -27,6 +27,7 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import { showDevelopmentToast } from "@/hooks/ToastNotification";
 
 export default function TopNavigation() {
+  const [open, setOpen] = useState(false)
   return (
     <>
       <div className="bg-pallete-main/40 fixed top-0 z-50 w-full backdrop-blur-md select-none">
@@ -50,17 +51,34 @@ export default function TopNavigation() {
           <NavigationMenu className="hidden md:flex font-rubik">
             <NavigationMenuList className="ms-32 space-x-12">
               <NavigationMenuItem>
-                <Link href="/" passHref>
+                <Link href="#collection" passHref
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById('collection');
+                    if (element) {
+                      element.scrollIntoView({ 
+                        behavior: 'smooth' 
+                      });
+                    }
+                  }}>
                   <h6>Collection</h6>
                 </Link>
               </NavigationMenuItem>
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <Link href="/" passHref>
                   <h6>Content</h6>
                 </Link>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
               <NavigationMenuItem>
-                <Link href="/" passHref>
+                <Link href="#contact" onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById('collection');
+                    if (element) {
+                      element.scrollIntoView({ 
+                        behavior: 'smooth' 
+                      });
+                    }
+                  }}>
                   <h6>Contact</h6>
                 </Link>
               </NavigationMenuItem>
@@ -75,7 +93,7 @@ export default function TopNavigation() {
               <FaShoppingBag className="size-5 md:size-6" /> Visit Store
             </Button>
             {/* Mobile Navigation - Hidden on desktop */}
-            <Sheet>
+            <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild className="md:hidden">
                 <Button
                   size="icon"
@@ -93,16 +111,37 @@ export default function TopNavigation() {
                   <SheetDescription></SheetDescription>
                 </SheetHeader>
                 <nav className="mt-8 flex flex-col gap-12 font-medium text-neutral-900 font-nunito text-end">
-                  <Link href="/" className="">
+                  <Link href="/" className="" onClick={() => setOpen(false)}>
                     <h4>Home</h4>
                   </Link>
-                  <Link href="/" className="">
+                  <Link 
+                    href="#collection" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.getElementById('collection');
+                      if (element) {
+                        element.scrollIntoView({ 
+                          behavior: 'smooth' 
+                        });
+                      }
+                      setOpen(false); // Close the sheet
+                    }}
+                  >
                     <h4>Collection</h4>
                   </Link>
-                  <Link href="/" className="">
-                    <h4>Content</h4>
-                  </Link>
-                  <Link href="/" className="">
+                  <Link 
+                    href="#contact" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.getElementById('contact'); // Fixed: was pointing to 'collection'
+                      if (element) {
+                        element.scrollIntoView({ 
+                          behavior: 'smooth' 
+                        });
+                      }
+                      setOpen(false); // Close the sheet
+                    }}
+                  >
                     <h4>Contact</h4>
                   </Link>
                 </nav>
