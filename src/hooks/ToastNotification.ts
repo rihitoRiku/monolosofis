@@ -15,7 +15,7 @@ export const showDevelopmentToast = () => {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      backgroundColor: "blue",
+      backgroundColor: "#ABCE8E",
       marginRight: "0.5rem"
     },
     // closeButton: true,

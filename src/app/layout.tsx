@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-pallete-background antialiased`}>
+      <body className={`${inter.className} bg-pallete-background text-pallete-secondary antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

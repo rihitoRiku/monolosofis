@@ -48,8 +48,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-between border-t py-8">
-          <h6>2025 Design by Riku</h6>
+        <div className="flex items-center justify-between border-t py-8 text-neutral-500">
+          <h6>Copyright © 2025 Riku | All Rights Reserved.</h6>
           <div className="flex gap-4">
             <h6>Privacy Policy</h6>
             <h6>Terms of Service</h6>
