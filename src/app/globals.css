@@ -52,7 +52,10 @@
   --color-avocado-400: oklch(0.92 0.19 114.08);
   --color-avocado-500: oklch(0.84 0.18 117.33);
   --color-avocado-600: oklch(0.53 0.12 118.34);
-  --color-pallete-blue: #5956e9;
+  --color-pallete-main: #F4F2E9;
+  --color-pallete-primary: #ABCE8E;
+  --color-pallete-secondary: #382110;
+  --color-pallete-ternary: #F8C15D;
   --color-pallete-cream: ##FFEFE0;
   --color-pallete-pink: #FAB8C5;
   --color-pallete-background: #f6f8fa;

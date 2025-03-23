@@ -14,7 +14,7 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { showDevelopmentToast } from "@/components/ToastNotification";
+import { showDevelopmentToast } from "@/hooks/ToastNotification";
 import Autoplay from "embla-carousel-autoplay";
 import { FaArrowRight, FaArrowLeft, FaAngleRight } from "react-icons/fa6";
 import { BsPerson } from "react-icons/bs";
@@ -79,34 +79,32 @@ export default function Page() {
     <div>
       {/* Full width global container */}
       <div className="bg-pallete-background w-full">
-        <div className="w-full rounded-b-[1rem] bg-[#FFEFE0]">
-          <div className="w-full rounded-b-[2rem] bg-white pb-[6rem] shadow-2xl shadow-neutral-200">
+        <div className="w-full rounded-b-[1rem] bg-pallete-main">
+          <div className="w-full rounded-b-[2rem] bg-white pb-[6rem]">
             {/*  */}
-            <div className="bg-pallete-blue rounded-b-[4rem]">
-              <div className="relative mx-auto flex max-w-[80rem] flex-col items-center justify-center px-4 font-sans text-neutral-100">
+            <div className="bg-pallete-main rounded-b-[4rem]">
+              <div className="relative mx-auto flex max-w-[80rem] flex-col items-center justify-center px-4">
                 <div className="mt-[12rem] flex flex-col items-center justify-center">
                   <h1
                     className={`${capriola.className} mb-8 text-center font-semibold`}
                   >
-                    Expand Your Mind by Reading a Book
+                    Gateway to Realm of Mind and Imagination
                   </h1>
                   <h6 className="mb-16 max-w-[64rem] text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit eius repellendus dolorem dicta aut dolore atque magnam
-                    nisi ipsam assumenda!
+                    Feed your mind with tales of fantasy, wisdom of philosophy, beauty of poetry, and depth of spirituality. We offer books and novels that ignite the mind and inspire the soul. Let's dive into worlds of endless imagination!
                   </h6>
                 </div>
-                <div className="mb-12 space-x-4">
+                <div className="mb-12 space-x-2 md:space-x-4 ">
                   <Button
                     onClick={showDevelopmentToast}
-                    className="cursor-pointer rounded-lg bg-white px-6 py-5 text-base text-neutral-900 shadow-2xl hover:bg-neutral-100 md:rounded-2xl md:px-8 md:py-8"
+                    className="cursor-pointer rounded-lg bg-white px-6 py-5 text-base text-neutral-900 shadow-none hover:bg-neutral-100 md:rounded-2xl md:px-8 md:py-8"
                   >
-                    <h5>Download</h5>
+                    <h5>Learn More</h5>
                   </Button>
                   <Button
                     onClick={showDevelopmentToast}
                     variant={"outline"}
-                    className="bg-pallete-blue hover:bg-pallete-blue cursor-pointer rounded-lg px-6 py-5 text-base hover:text-white md:rounded-2xl md:px-8 md:py-8"
+                    className="font-nunito bg-pallete-main hover:bg-pallete-main cursor-pointer rounded-lg px-6 py-5 text-base md:rounded-2xl md:px-8 md:py-8 shadow-none"
                   >
                     <h5>Read For Free</h5>
                   </Button>
@@ -139,7 +137,7 @@ export default function Page() {
                 ipsa, eligendi enim?
               </h6>
             </div>
-            <div className="bg-pallete-pink flex flex-col items-center justify-between rounded-2xl p-4 md:flex-row md:p-[2rem]">
+            <div className="bg-white flex flex-col items-center justify-between rounded-2xl p-4 md:flex-row md:p-[2rem]">
               <div className="relative h-[200px] w-full overflow-x-clip md:h-[16rem] md:w-3/5">
                 <div className="relative bottom-[2rem] h-full w-full scale-150 md:absolute md:inset-0 md:-top-12 md:bottom-0 md:h-[140%] md:scale-100">
                   <Image
@@ -150,7 +148,7 @@ export default function Page() {
                   />
                 </div>
               </div>
-              <div className="flex h-[180px] w-full flex-row items-center justify-center gap-12 rounded-2xl bg-white px-8 md:h-[16rem] md:w-1/2 md:flex-col md:items-start lg:flex-row lg:items-center">
+              <div className="flex h-[180px] w-full flex-row items-center justify-center gap-12 rounded-2xl bg-pallete-main px-8 md:h-[16rem] md:w-1/2 md:flex-col md:items-start lg:flex-row lg:items-center">
                 <div className="flex gap-2 lg:-mt-12">
                   <div className="">
                     <Image src="/pen.png" alt="" width={64} height={64} />
@@ -190,15 +188,15 @@ export default function Page() {
             <div className="flex items-center justify-center gap-6">
               <button
                 onClick={onPrevClick}
-                className="border-pallete-blue flex size-16 cursor-pointer items-center justify-center rounded-full border"
+                className="border-pallete-ternary flex size-16 cursor-pointer items-center justify-center rounded-full border"
               >
-                <FaArrowLeft className="text-pallete-blue text-3xl" />
+                <FaArrowLeft className="text-pallete-ternary text-3xl" />
               </button>
               <button
                 onClick={onNextClick}
-                className="bg-pallete-blue flex size-16 cursor-pointer items-center justify-center rounded-full"
+                className="bg-pallete-main flex size-16 cursor-pointer items-center justify-center rounded-full"
               >
-                <FaArrowRight className="text-3xl text-white" />
+                <FaArrowRight className="text-3xl text-pallete-ternary" />
               </button>
             </div>
           </div>
@@ -276,7 +274,7 @@ export default function Page() {
               </h6>
               <Button
                 variant={"link"}
-                className="cursor-pointer text-xl font-light"
+                className="cursor-pointer text-xl font-light text-pallete-secondary"
               >
                 Contents <FaAngleRight className="mt-0.5 size-5" />
               </Button>
@@ -286,7 +284,7 @@ export default function Page() {
               data-aos-delay="200"
               className="flex-3/5 md:p-16"
             >
-              <div className="bg-pallete-background relative aspect-square w-full rounded-[8rem]">
+              <div className=" relative aspect-square w-full rounded-[8rem]">
                 <Image
                   className="relative object-contain"
                   src="/bookillust2.png"
@@ -303,15 +301,15 @@ export default function Page() {
           data-aos-delay="200"
           className="mx-auto mb-56 flex max-w-screen-xl items-center px-4"
         >
-          <div className="bg-pallete-blue relative flex h-[48rem] w-full justify-center gap-8 rounded-[6rem] py-20">
-            <div className="flex flex-col items-center gap-24">
-              <h2 className="max-w-screen-md text-center text-white">
+          <div className="bg-pallete-main relative flex h-[48rem] w-full justify-center gap-8 rounded-[6rem] py-20">
+            <div className="flex flex-col items-center gap-24 px-4">
+              <h2 className="max-w-screen-md text-center text-pallete-secondary">
                 Let's Work On
                 <br /> Something Cool Together
               </h2>
               <Button
                 onClick={showDevelopmentToast}
-                className="text-pallete-blue h-16 w-[12rem] cursor-pointer rounded-3xl bg-white text-base font-semibold hover:bg-neutral-100"
+                className="text-pallete-main h-16 w-[12rem] cursor-pointer rounded-3xl bg-pallete-primary hover:bg-pallete-primary text-base font-semibold "
               >
                 {/* <MdOutlineEmail className="size-6 md:size-10" />{" "} */}
                 <h5>Talk to Author</h5>
