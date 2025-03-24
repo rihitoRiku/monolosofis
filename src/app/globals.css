@@ -42,24 +42,18 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  /* New Colors */
+  /* My New Colors */
   --color-warning: var(--warning);
   --color-warning-foreground: var(--warning-foreground);
-  /* Your Own Pallete */
-  --color-avocado-100: oklch(0.99 0 0);
-  --color-avocado-200: oklch(0.98 0.04 113.22);
-  --color-avocado-300: oklch(0.94 0.11 115.03);
-  --color-avocado-400: oklch(0.92 0.19 114.08);
-  --color-avocado-500: oklch(0.84 0.18 117.33);
-  --color-avocado-600: oklch(0.53 0.12 118.34);
+  /* My Own Pallete */
   --color-pallete-main: #F4F2E9;
   --color-pallete-primary: #ABCE8E;
   --color-pallete-secondary: #382110;
   --color-pallete-ternary: #F8C15D;
-  --color-pallete-cream: ##FFEFE0;
+  --color-pallete-cream: #FFEFE0;
   --color-pallete-pink: #FAB8C5;
   --color-pallete-background: #f6f8fa;
-  /* New Font */
+  /* My New Fonts */
   --font-inter: "Inter", sans-serif;
   --font-nunito: "Nunito", sans-serif;
   --font-passions-conflict: "Passions Conflict", cursive;
@@ -162,6 +156,6 @@
     @apply text-base md:text-lg;
   }
   p {
-    @apply text-base;
+    @apply text-sm md:text-base;
   }
 }

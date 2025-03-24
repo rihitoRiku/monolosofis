@@ -24,6 +24,8 @@ export const showDevelopmentToast = () => {
       height: "100px",
       padding: "16px",
       fontSize: "16px",
+      backgroundColor: "#fff",
+      boxShadow: "none"
     },
     className: "group",
   });

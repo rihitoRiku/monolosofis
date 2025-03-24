@@ -1,23 +1,14 @@
-import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "@/components/darkmode-toggle";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import TopNavigation from "@/components/top-navigation";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { AOSInitializer } from "@/components/providers/AOSProvider";
+import TopNavigation from "@/components/top-navigation";
 import Footer from "@/components/footer";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
+import { inter } from "@/lib/fonts";
+export { metadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Monolosofis",
-  description: "",
-};
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -25,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-pallete-background text-pallete-secondary antialiased`}>
+        <AOSInitializer />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -36,9 +28,6 @@ export default function RootLayout({
           {children}
           <Footer />
           <Toaster />
-          {/* <div className="absolute top-0 end-0 pe-4 pt-4">
-          <ModeToggle />
-        </div> */}
         </ThemeProvider>
       </body>
     </html>
