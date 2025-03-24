@@ -1,4 +1,5 @@
 "use client"
+
 import Link from "next/link";
 import React, { useState } from "react";
 import {
@@ -72,7 +73,7 @@ export default function TopNavigation() {
               <NavigationMenuItem>
                 <Link href="#contact" onClick={(e) => {
                     e.preventDefault();
-                    const element = document.getElementById('collection');
+                    const element = document.getElementById('contact');
                     if (element) {
                       element.scrollIntoView({ 
                         behavior: 'smooth' 
@@ -88,9 +89,9 @@ export default function TopNavigation() {
           <div className="flex items-center gap-2 md:gap-3">
             <Button
               onClick={showDevelopmentToast}
-              className="cursor-pointer rounded-lg bg-pallete-secondary px-6 py-5 text-base font-semibold shadow-2xl hover:bg-pallete-ternary md:w-[9rem] md:rounded-2xl md:px-8 md:py-6"
+              className="cursor-pointer rounded-lg bg-pallete-secondary px-6 py-5 text-base font-semibold shadow-2xl hover:bg-pallete-ternary md:w-[9rem] md:rounded-2xl md:px-8 md:py-6 text-white"
             >
-              <FaShoppingBag className="size-5 md:size-6" /> Visit Store
+              <FaShoppingBag className="size-5 md:size-6 text-white" /> Visit Store
             </Button>
             {/* Mobile Navigation - Hidden on desktop */}
             <Sheet open={open} onOpenChange={setOpen}>
