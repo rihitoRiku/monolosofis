@@ -1,11 +1,16 @@
 import { toast } from "sonner";
 export const showDevelopmentToast = () => {
-  toast("Currently not available!", {
-    description: "This feature is currently still in development",
+  toast("Oops!", {
+    description: (
+      <span className="text-black text-sm">
+        This feature is currently still in development
+      </span>
+    ),
+    descriptionClassName: "text-red-500",
     position: "top-left",
     duration: 3000,
     action: {
-      label: "Close",
+      label: "close",
       onClick: () => console.log("Closed"),
     },
     actionButtonStyle: {
@@ -15,8 +20,9 @@ export const showDevelopmentToast = () => {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      backgroundColor: "#ABCE8E",
-      marginRight: "0.5rem"
+      backgroundColor: "#382110",
+      marginRight: "0.5rem",
+      color: "#fff",
     },
     // closeButton: true,
     style: {
@@ -25,8 +31,8 @@ export const showDevelopmentToast = () => {
       padding: "16px",
       fontSize: "16px",
       backgroundColor: "#fff",
-      boxShadow: "none"
+      boxShadow: "none",
+      color: "black",
     },
-    className: "group",
   });
 };
