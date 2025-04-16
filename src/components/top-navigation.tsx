@@ -33,7 +33,17 @@ export default function TopNavigation() {
     <>
       <div className="bg-pallete-main/40 fixed top-0 z-50 w-full backdrop-blur-md select-none">
         <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-2 py-4 md:px-4 md:py-6">
-          <Link href="/">
+          <Link
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+              setOpen(false);
+            }}
+          >
             <div className="flex items-center gap-4">
               {/* <Image
                 src="/logo.svg"
@@ -49,20 +59,23 @@ export default function TopNavigation() {
           </Link>
 
           {/* Desktop Navigation - Hidden on mobile */}
-          <NavigationMenu className="hidden md:flex font-rubik">
+          <NavigationMenu className="font-rubik hidden md:flex">
             <NavigationMenuList className="ms-32 space-x-12">
               <NavigationMenuItem>
-                <Link href="#collection" passHref
+                <Link
+                  href="#collection"
+                  passHref
                   onClick={(e) => {
                     e.preventDefault();
-                    const element = document.getElementById('collection');
+                    const element = document.getElementById("collection");
                     if (element) {
-                      element.scrollIntoView({ 
-                        behavior: 'smooth' 
+                      element.scrollIntoView({
+                        behavior: "smooth",
                       });
                     }
-                  }}>
-                  <h6>Collection</h6>
+                  }}
+                >
+                  <h6 className="hover:text-pallete-ternary">Collection</h6>
                 </Link>
               </NavigationMenuItem>
               {/* <NavigationMenuItem>
@@ -71,16 +84,19 @@ export default function TopNavigation() {
                 </Link>
               </NavigationMenuItem> */}
               <NavigationMenuItem>
-                <Link href="#contact" onClick={(e) => {
+                <Link
+                  href="#contact"
+                  onClick={(e) => {
                     e.preventDefault();
-                    const element = document.getElementById('contact');
+                    const element = document.getElementById("contact");
                     if (element) {
-                      element.scrollIntoView({ 
-                        behavior: 'smooth' 
+                      element.scrollIntoView({
+                        behavior: "smooth",
                       });
                     }
-                  }}>
-                  <h6>Contact</h6>
+                  }}
+                >
+                  <h6 className="hover:text-pallete-ternary">Contact</h6>
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -89,9 +105,10 @@ export default function TopNavigation() {
           <div className="flex items-center gap-2 md:gap-3">
             <Button
               onClick={showDevelopmentToast}
-              className="cursor-pointer rounded-lg bg-pallete-secondary px-6 py-5 text-base font-semibold shadow-2xl hover:bg-pallete-ternary md:w-[9rem] md:rounded-2xl md:px-8 md:py-6 text-white"
+              className="bg-pallete-secondary hover:bg-pallete-ternary cursor-pointer rounded-lg px-6 py-5 md:text-base font-semibold text-white text-sm shadow-2xl md:w-[9rem] md:rounded-2xl md:px-8 md:py-6"
             >
-              <FaShoppingBag className="size-5 md:size-6 text-white" /> Visit Store
+              <FaShoppingBag className="size-5 text-white md:size-6" /> Visit
+              Store
             </Button>
             {/* Mobile Navigation - Hidden on desktop */}
             <Sheet open={open} onOpenChange={setOpen}>
@@ -100,7 +117,7 @@ export default function TopNavigation() {
                   size="icon"
                   className="bg-pallete-main hover:bg-pallete-main cursor-pointer rounded-xl text-neutral-200 shadow-none hover:text-neutral-50 md:p-4 md:text-lg"
                 >
-                  <HiMenuAlt3 className="size-8 text-pallete-secondary" />
+                  <HiMenuAlt3 className="text-pallete-secondary size-8" />
                 </Button>
               </SheetTrigger>
               <SheetContent
@@ -111,18 +128,29 @@ export default function TopNavigation() {
                   <SheetTitle className=""></SheetTitle>
                   <SheetDescription></SheetDescription>
                 </SheetHeader>
-                <nav className="mt-8 flex flex-col gap-12 font-medium text-neutral-900 font-nunito text-end">
-                  <Link href="/" className="" onClick={() => setOpen(false)}>
-                    <h4>Home</h4>
-                  </Link>
-                  <Link 
-                    href="#collection" 
+                <nav className="font-nunito mt-8 flex flex-col gap-12 text-end font-medium text-neutral-900">
+                  <Link
+                    href="/"
+                    className=""
                     onClick={(e) => {
                       e.preventDefault();
-                      const element = document.getElementById('collection');
+                      window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                      });
+                      setOpen(false);
+                    }}
+                  >
+                    <h4>Home</h4>
+                  </Link>
+                  <Link
+                    href="#collection"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.getElementById("collection");
                       if (element) {
-                        element.scrollIntoView({ 
-                          behavior: 'smooth' 
+                        element.scrollIntoView({
+                          behavior: "smooth",
                         });
                       }
                       setOpen(false); // Close the sheet
@@ -130,14 +158,14 @@ export default function TopNavigation() {
                   >
                     <h4>Collection</h4>
                   </Link>
-                  <Link 
-                    href="#contact" 
+                  <Link
+                    href="#contact"
                     onClick={(e) => {
                       e.preventDefault();
-                      const element = document.getElementById('contact'); // Fixed: was pointing to 'collection'
+                      const element = document.getElementById("contact"); // Fixed: was pointing to 'collection'
                       if (element) {
-                        element.scrollIntoView({ 
-                          behavior: 'smooth' 
+                        element.scrollIntoView({
+                          behavior: "smooth",
                         });
                       }
                       setOpen(false); // Close the sheet
