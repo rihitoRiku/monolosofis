@@ -105,7 +105,7 @@ export default function TopNavigation() {
           <div className="flex items-center gap-2 md:gap-3">
             <Button
               onClick={showDevelopmentToast}
-              className="bg-pallete-secondary hover:bg-pallete-ternary cursor-pointer rounded-lg px-6 py-5 md:text-base font-semibold text-white text-sm shadow-2xl md:w-[9rem] md:rounded-2xl md:px-8 md:py-6"
+              className="bg-pallete-secondary hover:bg-pallete-ternary cursor-pointer rounded-lg px-6 py-5 md:text-base font-semibold text-white text-sm md:w-[9rem] md:rounded-2xl md:px-8 md:py-6"
             >
               <FaShoppingBag className="size-5 text-white md:size-6" /> Visit
               Store

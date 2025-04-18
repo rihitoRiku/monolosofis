@@ -66,7 +66,7 @@ export default function HeroSection() {
         data-aos-delay="400"
       >
         <div className="mt-24 mb-28 flex flex-col items-start justify-center gap-6 md:mt-34 md:flex-row md:gap-6">
-          <h2 className="flex-1/3 font-medium md:flex-1/2 text-center">
+          <h2 className="flex-1/3 text-center font-medium md:flex-1/2">
             About Monolosofis
           </h2>
           <h6 className="md:flex-1/2">
@@ -77,13 +77,14 @@ export default function HeroSection() {
           </h6>
         </div>
         <div className="flex flex-col items-center justify-between rounded-2xl bg-white p-6 md:flex-row md:p-[2rem]">
-          <div className="relative h-[200px] w-full overflow-x-clip md:h-[16rem] md:w-3/5">
-            <div className="relative -mt-6 h-full w-full scale-150 md:absolute md:inset-0 md:mt-0">
+          <div className="relative flex h-[200px] w-full items-center justify-center md:h-[16rem] md:w-3/5">
+            <div className="relative -top-0">
               <Image
-                className="object-contain object-bottom"
+                className="size-[20rem] md:size-[24rem]"
                 src="/mind.png"
                 alt="mind"
-                fill
+                width={300}
+                height={300}
               />
             </div>
           </div>
